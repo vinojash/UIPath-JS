@@ -2,12 +2,17 @@
 
 Ability to run javascript (nodejs) in UIPath designer (still under development,  more functionality will be added in upcoming release..!)
 
+[Download nuget package here](https://drive.google.com/file/d/1ibM7HxcQWyRCL4AGMM0fDA4EbSkBTRbS/view?usp=sharing)
+
+
+![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/palindrome.gif)
+
 [Thanks to EdgeJS](https://www.nuget.org/packages/Edge.js/)
 
 [Click here to Edge git repository](https://github.com/tjanczuk/edge)
 
-# Create a Blank Process in UIPath Designer
-    Then add Input Dialog, Check Palindrome and Message Box activity and connect those three sequentially. 
+# How to use
+    Create a Blank Process in UIPath Designer,then add Input Dialog, Check Palindrome and Message Box activity and connect those three sequentially. 
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/1%20workflow.PNG)
 
@@ -46,4 +51,4 @@ data=palindrome(data); //data will be both input and output
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/5%20message%20box.PNG)
 
-    Run the bot, try to give different kind of inputs like "MADAM", "INDIA", "APPLE", etc 
+    Run the bot & try to give different kind of inputs like "MADAM", "INDIA", "APPLE", etc 
