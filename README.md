@@ -12,7 +12,7 @@ Ability to run javascript (nodejs) in UIPath designer (still under development, 
 [Click here to Edge git repository](https://github.com/tjanczuk/edge)
 
 # How to use
-    Create a Blank Process in UIPath Designer,then add Input Dialog, Check Palindrome and Message Box activity and connect those three sequentially. 
+    Download and install the above nuget package to your designer then, Create a Blank Process in UIPath Designer,then add Input Dialog, Execute Javascript and Message Box activity and connect those three sequentially. 
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/1%20workflow.PNG)
 
@@ -24,7 +24,7 @@ Ability to run javascript (nodejs) in UIPath designer (still under development, 
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/3%20InputDialog.PNG)
 
-    Pass the "data" variable value to "Data" input of execuite java script activity
+    Pass the "data" variable value to "Data" input of execuite java script activity,(Execute javascript activity internally uses one variable name called data, which is outout of the same activity)
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/4%20runjs.PNG)
 
