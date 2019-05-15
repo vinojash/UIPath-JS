@@ -12,7 +12,7 @@ Ability to run javascript (nodejs) in UIPath designer (still under development, 
 [Click here to Edge git repository](https://github.com/tjanczuk/edge)
 
 # How to use
-    Download and install the above nuget package to your designer then, Create a Blank Process in UIPath Designer,then add Input Dialog, Execute Javascript and Message Box activity and connect those three sequentially. 
+    Download and install the above nuget package to your designer then, Create a Blank Process in UIPath Designer,then add Input Dialog, Execute Javascript and Message Box activity and connect those three in sequential manner. 
 
 ![](https://raw.githubusercontent.com/vinojash/UIPath-JS/master/Screenshots/1%20workflow.PNG)
 
