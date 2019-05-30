@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Activities;
+﻿using System.Activities;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
 
 namespace RunJavaScript
 {
@@ -18,7 +14,7 @@ namespace RunJavaScript
         public InArgument<string> JSFunction { get; set; }
 
         [Category("Output")]
-        public OutArgument<string> Result { get; set; }
+        public OutArgument<JObject> Result { get; set; }
 
         protected override void Execute(CodeActivityContext context)
         {
@@ -27,7 +23,7 @@ namespace RunJavaScript
             var data = Data.Get(context);
             var jsFunction = JSFunction.Get(context);
 
-            var result = runJS.executeJSFunction(data, jsFunction);
+            JObject result = runJS.executeJSFunction(data, jsFunction);
             Result.Set(context, result);
         }
     }
