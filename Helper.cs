@@ -6,7 +6,7 @@ using WebSocket4Net;
 
 namespace Chrome
 {
-    class Helper
+    public class Helper
     {
         private string data, jsFunction;
 
@@ -41,7 +41,7 @@ namespace Chrome
 
     }
 
-    class ChromeWebSocket
+    public class ChromeWebSocket
     {
 
         private String message = null;

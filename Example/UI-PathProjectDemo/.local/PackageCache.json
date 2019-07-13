@@ -93,11 +93,11 @@
     {
       "Package": {
         "Id": "Chrome",
-        "Version": "1.0.4"
+        "Version": "1.0.5"
       },
       "Assemblies": [
-        "C:\\Users\\VinoJash\\.nuget\\packages\\chrome/1.0.4\\lib/Chrome.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\edge.js/8.2.1\\lib/net40/EdgeJs.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\chrome/1.0.5\\lib/Chrome.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\edgejs/11.3.3\\lib/net45/EdgeJs.dll",
         "C:\\Users\\VinoJash\\.nuget\\packages\\newtonsoft.json/12.0.2\\lib/net45/Newtonsoft.Json.dll",
         "C:\\Users\\VinoJash\\.nuget\\packages\\supersocket.clientengine.core/0.10.0\\lib/net45/SuperSocket.ClientEngine.dll",
         "C:\\Users\\VinoJash\\.nuget\\packages\\system.collections.specialized/4.3.0\\lib/net46/System.Collections.Specialized.dll",
@@ -110,6 +110,15 @@
         "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.x509certificates/4.3.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
         "C:\\Users\\VinoJash\\.nuget\\packages\\websocket4net/0.15.2\\lib/net45/WebSocket4Net.dll"
       ]
+    },
+    {
+      "Package": {
+        "Id": "EdgeJs",
+        "Version": "11.3.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\VinoJash\\.nuget\\packages\\edgejs/11.3.3\\lib/net45/EdgeJs.dll"
+      ]
     }
   ],
   "Conflicts": [],
@@ -121,19 +130,19 @@
     },
     "Chrome": {
       "Id": "Chrome",
-      "Version": "1.0.4",
+      "Version": "1.0.5",
       "Dependencies": [
         {
           "Item1": "WebSocket4Net",
           "Item2": "[0.15.2, )"
         },
         {
-          "Item1": "Edge.js",
-          "Item2": "[8.2.1, )"
-        },
-        {
           "Item1": "Newtonsoft.Json",
           "Item2": "[12.0.2, )"
+        },
+        {
+          "Item1": "EdgeJs",
+          "Item2": "[11.3.3, )"
         }
       ]
     },
@@ -142,9 +151,9 @@
       "Version": "2.13.5",
       "Dependencies": []
     },
-    "Edge.js": {
-      "Id": "Edge.js",
-      "Version": "8.2.1",
+    "EdgeJs": {
+      "Id": "EdgeJs",
+      "Version": "11.3.3",
       "Dependencies": []
     },
     "Extended.Wpf.Toolkit": {

@@ -1,16 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Execute_JS_In_Chrome" this:Execute_JS_In_Chrome.chromeWebScoketURL="ws://localhost:9222/devtools/page/B5BDFD118E536868097F9AE343ECF5BA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:c="clr-namespace:Chrome;assembly=RunJavaScript" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="chromeWebScoketURL" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-  </x:Members>
-  <mva:VisualBasic.Settings>
-    <x:Null />
-  </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>376,691</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>Execute JS In Chrome_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Execute_JS_In_Chrome" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="376,818" sap2010:WorkflowViewState.IdRef="Execute JS In Chrome_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:c="clr-namespace:Chrome;assembly=Chrome" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
@@ -57,17 +45,23 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Execute JS In Chrome" sap:VirtualizedContainerService.HintSize="336,571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Execute JS In Chrome" sap:VirtualizedContainerService.HintSize="336,698" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="result" />
       <Variable x:TypeArguments="ui:GenericValue" Name="propertyName" />
       <Variable x:TypeArguments="ui:GenericValue" Name="propertyValue" />
+      <Variable x:TypeArguments="x:String" Name="chromeWebScoketURL" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Socket URL" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="chromeWebScoketURL">[chromeWebScoketURL]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="314,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter property name" Title="Add property to person object">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="ui:GenericValue">[propertyName]</OutArgument>
@@ -78,7 +72,7 @@
         <OutArgument x:TypeArguments="ui:GenericValue">[propertyValue]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <c:ExecuteJSInChromeVoid ChromeWebSocketURL="[chromeWebScoketURL]" DisplayName="Add property and value to object" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="ExecuteJSInChromeVoid_1" JSFunction="[&quot; console.log('hello'); function addProperty(propertyName, propertyValue) {console.log(arguments); person[propertyName] = propertyValue;}addProperty('&quot;+propertyName+&quot;','&quot;+propertyValue+&quot;');&quot;]" MessageId="2" />
+    <c:ExecuteJSInChromeVoid ChromeWebSocketURL="[chromeWebScoketURL]" DisplayName="Add property to JS object" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="ExecuteJSInChromeVoid_1" JSFunction="[&quot; function addProperty(propertyName, propertyValue) {console.log(arguments); person[propertyName] = propertyValue;}addProperty('&quot;+propertyName+&quot;','&quot;+propertyValue+&quot;')&quot;]" MessageId="2" />
     <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Result" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;[&quot;+propertyName+&quot;]:&quot;+propertyValue+&quot; added..!&quot;]" TopMost="True" />
   </Sequence>

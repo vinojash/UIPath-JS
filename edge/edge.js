@@ -4,10 +4,13 @@ var fs = require('fs')
     , edge;
 
 var versionMap = [
-    [ /^4\./, '4.1.1' ],
-    [ /^5\./, '5.1.0' ],
-    [ /^6\./, '6.4.0' ],
-    [ /^7\./, '7.10.0' ],
+    [ /^6\./, '6.15.0' ],
+    [ /^7\./, '7.10.1' ],
+    [ /^8\./, '8.14.0' ],
+    [ /^9\./, '9.11.2' ],
+    [ /^10\./, '10.14.0' ],
+    [ /^11\./, '11.3.0' ],
+    [ /^12\./, '12.3.1' ],
 ];
 
 function determineVersion() {
@@ -44,11 +47,12 @@ if (edgeNative.match(/edge_coreclr\.node$/i)) {
     // how to compile literal C# at https://github.com/tjanczuk/edge-cs/blob/master/lib/edge-cs.js
     process.env.EDGE_USE_CORECLR = 1;
 }
-if (process.env.EDGE_USE_CORECLR && !process.env.EDGE_BOOTSTRAP_DIR && fs.existsSync(path.join(__dirname, 'bootstrap', 'bin', 'Release', 'netcoreapp1.0', 'bootstrap.dll'))) {
-    process.env.EDGE_BOOTSTRAP_DIR = path.join(__dirname, 'bootstrap', 'bin', 'Release', 'netcoreapp1.0');
+if (process.env.EDGE_USE_CORECLR && !process.env.EDGE_BOOTSTRAP_DIR && fs.existsSync(path.join(__dirname, 'bootstrap', 'bin', 'Release', 'netcoreapp1.1', 'bootstrap.dll'))) {
+    process.env.EDGE_BOOTSTRAP_DIR = path.join(__dirname, 'bootstrap', 'bin', 'Release', 'netcoreapp1.1');
 }
 
 process.env.EDGE_NATIVE = edgeNative;
+
 edge = require(edgeNative);
 
 exports.func = function(language, options) {
@@ -113,7 +117,15 @@ exports.func = function(language, options) {
         }
 
         if (process.env.EDGE_USE_CORECLR) {
-            options.bootstrapDependencyManifest = compiler.getBootstrapDependencyManifest();
+            var defaultManifest = path.join(__dirname, 'bootstrap', 'bin', 'Release', 'netcoreapp1.1', 'bootstrap.deps.json');
+            var compilerManifest;
+            if(compiler.getBootstrapDependencyManifest){
+                compilerManifest = compiler.getBootstrapDependencyManifest();
+            }
+            options.bootstrapDependencyManifest =
+                compilerManifest && fs.existsSync(compilerManifest)
+                ? compilerManifest
+                : defaultManifest;
         }
     }
 

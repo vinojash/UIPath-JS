@@ -11,10 +11,10 @@
           "lib/Net40/ICSharpCode.AvalonEdit.dll": {}
         }
       },
-      "Chrome/1.0.4": {
+      "Chrome/1.0.5": {
         "type": "package",
         "dependencies": {
-          "Edge.js": "8.2.1",
+          "EdgeJs": "11.3.3",
           "Newtonsoft.Json": "12.0.2",
           "WebSocket4Net": "0.15.2"
         },
@@ -34,13 +34,16 @@
           "lib/net40-client/CsvHelper.dll": {}
         }
       },
-      "Edge.js/8.2.1": {
+      "EdgeJs/11.3.3": {
         "type": "package",
         "compile": {
-          "lib/net40/_._": {}
+          "lib/net45/_._": {}
         },
         "runtime": {
-          "lib/net40/EdgeJs.dll": {}
+          "lib/net45/EdgeJs.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Extended.Wpf.Toolkit/2.8.0": {
@@ -670,13 +673,13 @@
         "lib/Net40/ICSharpCode.AvalonEdit.xml"
       ]
     },
-    "Chrome/1.0.4": {
-      "sha512": "7lmVHha+FkdcMcfl2fexLsVg5eF6wXiMfNFz0YWASKAD2H2alllF04XJRTgbS49NcJWx9i8kDY5DUrspg4L66Q==",
+    "Chrome/1.0.5": {
+      "sha512": "Dxql3MCnFlSjiN3Kzixtwr0R3UZzYMKVscsHGrYsImpptdIOKEzpZmEK8/WWUEu+D23xq6ijTXE2BaFBu5c2gQ==",
       "type": "package",
-      "path": "chrome/1.0.4",
+      "path": "chrome/1.0.5",
       "files": [
         ".nupkg.metadata",
-        "chrome.1.0.4.nupkg.sha512",
+        "chrome.1.0.5.nupkg.sha512",
         "chrome.nuspec",
         "lib/Chrome.dll"
       ]
@@ -703,24 +706,27 @@
         "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.xml"
       ]
     },
-    "Edge.js/8.2.1": {
-      "sha512": "TJliTNfV3CQy9J3ZARSrff72iqNZa20Upv47zon3hCwJzrTir8T9uVkLNczov9tSM8k20/St/aw6CSAjZlaMKQ==",
+    "EdgeJs/11.3.3": {
+      "sha512": "vEh6O+Fhp4igpEvr4rxIJjtQVtX2q1KjFlxFHCbT1Job3+apnE5ox1RfckKs2MlDjtiUh1cydrAt86SpvS8CbQ==",
       "type": "package",
-      "path": "edge.js/8.2.1",
+      "path": "edgejs/11.3.3",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "build/EdgeJs.targets",
         "content/edge/double_edge.js",
         "content/edge/edge.js",
         "content/edge/x64/edge_nativeclr.node",
         "content/edge/x64/node.dll",
         "content/edge/x86/edge_nativeclr.node",
         "content/edge/x86/node.dll",
-        "edge.js.8.2.1.nupkg.sha512",
-        "edge.js.nuspec",
+        "edgejs.11.3.3.nupkg.sha512",
+        "edgejs.nuspec",
         "lib/net40/EdgeJs.dll",
-        "lib/netstandard1.6/EdgeJs.dll",
+        "lib/net45/EdgeJs.dll",
+        "lib/netcoreapp1.1/EdgeJs.dll",
+        "lib/netcoreapp2.0/EdgeJs.dll",
         "tools/install.ps1"
       ]
     },
@@ -1959,7 +1965,8 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
-      "Chrome >= 1.0.4 <= 1.0.4",
+      "Chrome >= 1.0.5 <= 1.0.5",
+      "EdgeJs >= 11.3.3 <= 11.3.3",
       "UiPath.System.Activities >= 19.6.0 <= 19.6.0",
       "UiPath.UIAutomation.Activities >= 19.6.0 <= 19.6.0",
       "UiPath.WebAPI.Activities >= 1.4.2 <= 1.4.2",
@@ -1983,7 +1990,12 @@
           "Chrome": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.4, 1.0.4]"
+            "version": "[1.0.5, 1.0.5]"
+          },
+          "EdgeJs": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[11.3.3, 11.3.3]"
           },
           "UiPath.System.Activities": {
             "include": "Runtime",
