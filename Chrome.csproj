@@ -131,6 +131,7 @@
     <Compile Include="ExecuteJSInChrome-void.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunNodeJS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="edge\x64\edge_nativeclr.node">

@@ -3,7 +3,7 @@
   "description": "Demonstration of below activities \r\n1. Run Node JS\r\n2. Execute JS In Chrome\r\n3. Execute JS In Chrome Void\r\n4. Dev Tools Protocol\r\n5. Dev Tools Protocol Void",
   "main": "Main.xaml",
   "dependencies": {
-    "Chrome": "[1.0.2]",
+    "Chrome": "[1.0.4]",
     "UiPath.System.Activities": "[19.6.0]",
     "UiPath.UIAutomation.Activities": "[19.6.0]",
     "UiPath.WebAPI.Activities": "[1.4.2]",

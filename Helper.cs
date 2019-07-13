@@ -43,6 +43,7 @@ namespace Chrome
 
     class ChromeWebSocket
     {
+
         private String message = null;
         private int id = 0;
 
@@ -64,7 +65,7 @@ namespace Chrome
 
             if (waitForResponse)
             {
-                return this.sendJSToChromeAndWait(wsURL, true);
+                return this.sendJSToChromeAndWait(wsURL, false);
             }
             else
             {
@@ -156,7 +157,7 @@ namespace Chrome
                         value = finalResult.GetValue("value").ToString();
                     }
                 }
-                else if (isJSFunction && inputMessage.TryGetValue("id", out jtoken) && ((Int32)inputMessage["id"] == id))
+                else if (!isJSFunction && inputMessage.TryGetValue("id", out jtoken) && ((Int32)inputMessage["id"] == id))
                 {
                     ws.Close();
                     ws.Dispose();
@@ -184,5 +185,6 @@ namespace Chrome
             this.message = "{ \"id\":" + id + ",\"method\":\"" + method + "\",\"params\": { " + parameters + "} }";
             this.id = id;
         }
+
     }
 }

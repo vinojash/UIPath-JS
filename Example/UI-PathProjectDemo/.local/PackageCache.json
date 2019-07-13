@@ -2,27 +2,6 @@
   "Packages": [
     {
       "Package": {
-        "Id": "Chrome",
-        "Version": "1.0.2"
-      },
-      "Assemblies": [
-        "C:\\Users\\VinoJash\\.nuget\\packages\\chrome/1.0.2\\lib/Chrome.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\edge.js/8.2.1\\lib/net40/EdgeJs.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\newtonsoft.json/12.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\supersocket.clientengine.core/0.10.0\\lib/net45/SuperSocket.ClientEngine.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.collections.specialized/4.3.0\\lib/net46/System.Collections.Specialized.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.nameresolution/4.3.0\\lib/net46/System.Net.NameResolution.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.security/4.3.0\\lib/net46/System.Net.Security.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.sockets/4.3.0\\lib/net46/System.Net.Sockets.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.algorithms/4.3.0\\lib/net461/System.Security.Cryptography.Algorithms.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.encoding/4.3.0\\lib/net46/System.Security.Cryptography.Encoding.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.primitives/4.3.0\\lib/net46/System.Security.Cryptography.Primitives.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.x509certificates/4.3.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
-        "C:\\Users\\VinoJash\\.nuget\\packages\\websocket4net/0.15.2\\lib/net45/WebSocket4Net.dll"
-      ]
-    },
-    {
-      "Package": {
         "Id": "UiPath.System.Activities",
         "Version": "19.6.0"
       },
@@ -110,6 +89,27 @@
       "Assemblies": [
         "C:\\Users\\VinoJash\\.nuget\\packages\\uipathteam.jsonrequestactivities/1.0.0\\lib/JsonRequest.dll"
       ]
+    },
+    {
+      "Package": {
+        "Id": "Chrome",
+        "Version": "1.0.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\VinoJash\\.nuget\\packages\\chrome/1.0.4\\lib/Chrome.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\edge.js/8.2.1\\lib/net40/EdgeJs.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\newtonsoft.json/12.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\supersocket.clientengine.core/0.10.0\\lib/net45/SuperSocket.ClientEngine.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.collections.specialized/4.3.0\\lib/net46/System.Collections.Specialized.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.nameresolution/4.3.0\\lib/net46/System.Net.NameResolution.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.security/4.3.0\\lib/net46/System.Net.Security.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.net.sockets/4.3.0\\lib/net46/System.Net.Sockets.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.algorithms/4.3.0\\lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.encoding/4.3.0\\lib/net46/System.Security.Cryptography.Encoding.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.primitives/4.3.0\\lib/net46/System.Security.Cryptography.Primitives.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\system.security.cryptography.x509certificates/4.3.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "C:\\Users\\VinoJash\\.nuget\\packages\\websocket4net/0.15.2\\lib/net45/WebSocket4Net.dll"
+      ]
     }
   ],
   "Conflicts": [],
@@ -121,7 +121,7 @@
     },
     "Chrome": {
       "Id": "Chrome",
-      "Version": "1.0.2",
+      "Version": "1.0.4",
       "Dependencies": [
         {
           "Item1": "WebSocket4Net",
